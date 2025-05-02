@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+	<link rel="stylesheet" href="/src/styles/global.css" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Iniciar Sesión</title>
+</head>
+<body class="bg-[linear-gradient(to_right,_#023D54,_#11A86B,_#B4BA5A)]">
+
+    <h2 class="flex text-white text-5xl justify-center transform translate-y-8 text-shadow-2xs"> Iniciar Sesión</h2>
+
+    <div class="inline-block h-120 w-110 bg-white transform translate-x-116 translate-y-18 rounded-3xl shadow-2xl">
+            
+        <img src="public/Basurin-Photoroom.png" class="h-45 w-45 transform translate-x-32 translate-y-8 drop-shadow-2xl" alt="Basurín"/>
+
+        <div class="inline-block transform -translate-y-5">
+            <p class="text-gray-400 transform translate-y-16 translate-x-8">Correo</p>
+            <input type="email" id="email" name="email" required placeholder="     ejemplo@correo.com" class="h-10 w-90 bg-gray-300 rounded-2xl transform translate-y-17 translate-x-8 shadow-2xl">
+            <p class="text-gray-400 transform translate-y-19 translate-x-8">Contraseña</p>
+            <input type="password" id="password" name="password" required placeholder="     Contraseña" class="h-10 w-90 bg-gray-300 rounded-2xl transform translate-y-19 translate-x-8 shadow-2xl">
+
+        </div>
+
+        <div class="inline-block transform translate-y-19 translate-x-13">
+
+            <input type="button" value="Iniciar Sesión" class="bg-cyan-700 h-10 w-40 rounded-2xl shadow-2xl text-white hover:bg-cyan-800 transition duration-300 cursor-pointer">
+            <input type="button" value="Crear Cuenta" class="bg-green-700 h-10 w-40 rounded-2xl shadow-2xl text-white hover:bg-green-800 transition duration-300 cursor-pointer">
+
+        </div>
+
+    </div>
+
+    
+</body>
+</html>
