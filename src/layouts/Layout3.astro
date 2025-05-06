@@ -8,17 +8,30 @@
     <meta name="generator" content={Astro.generator} />
     <title>Registrarse</title>
 </head>
-<body class="bg-[linear-gradient(to_right,_#023D54,_#11A86B,_#B4BA5A)]">
+<body class="flex bg-[linear-gradient(to_right,_#023D54,_#11A86B,_#B4BA5A)] justify-center items-center h-screen">
 
     
-    <div class="inline-block h-120 w-220 bg-white transform translate-x-62 translate-y-18 rounded-3xl shadow-2xl">
+    <div class="h-120 w-220 bg-white rounded-3xl shadow-2xl">
     
-        <h2 class="flex text-5xl justify-center transform translate-y-8 text-shadow-2xs"> Registrarse</h2>
-        <img src="public/Basurin-Photoroom.png" class="h-50 w-50 transform translate-x-142 translate-y-23 drop-shadow-2xl" alt="Basurín"/>
-        <input type="text" id="name" name="name" required placeholder="     Nombre" class="h-10 w-90 bg-gray-300 rounded-2xl transform -translate-y-30 translate-x-14 shadow-2xl">
-        <input type="text" id="name" name="name" required placeholder="     Apellidos" class="h-10 w-90 bg-gray-300 rounded-2xl transform -translate-y-11 -translate-x-77 shadow-2xl">
-        <input type="email" id="email" name="email" required placeholder="     ejemplo@email.com" class="h-10 w-90 bg-gray-300 rounded-2xl transform -translate-y-2 translate-x-14 shadow-2xl">
+        <h2 class="flex text-5xl justify-center text-shadow-2xs translate-y-9"> Registrarse</h2>
+        
+        <div class="inline-block transform translate-y-20 translate-x-140 h-50 w-50">
+            
+            <img src="public/Basurin-Photoroom.png" class="h-50 w-50 drop-shadow-2xl" alt="Basurín"/>
+        
+        </div>
+        
+        <div class="grid gap-4 -translate-y-30 translate-x-10 ">
+        
+            <input type="text" id="name" name="name" required placeholder="     Nombre" class="h-10 w-90 bg-gray-300 rounded-2xl shadow-2xl">
+            <input type="text" id="name" name="name" required placeholder="     Apellidos" class="h-10 w-90 bg-gray-300 rounded-2xl shadow-2xl">
+            <input type="email" id="email" name="email" required placeholder="     ejemplo@email.com" class="h-10 w-90 bg-gray-300 rounded-2xl shadow-2xl">
+            <input type="password" id="password" name="password" required placeholder="     Contraseña" class="h-10 w-90 bg-gray-300 rounded-2xl shadow-2xl">
+            <input type="password" id="password" name="password" required placeholder="     Repetir contraseña" class="h-10 w-90 bg-gray-300 rounded-2xl shadow-2xl">
 
+        </div>
+
+        <input type="button" value="Crear cuenta" class="transform translate-x-120 -translate-y-40 h-10 w-90 bg-[#11A86B] rounded-2xl shadow-2xl text-white font-bold text-lg cursor-pointer hover:bg-[#0F8D5E] transition duration-300 ease-in-out">
 
         
 
