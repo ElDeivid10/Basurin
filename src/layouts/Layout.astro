@@ -17,7 +17,6 @@ import BarraNav from "../components/BarraNav.astro";
 		<BarraNav />
 
 		<section class="h-159 w-full rounded-bl-3xl rounded-br-3xl bg-[linear-gradient(to_right,_#023D54,_#11A86B,_#B4BA5A)] shadow-2xl">
-
 			
 			<div class="h-[1px] w-100 bg-white transform translate-y-40 translate-x-10"></div>
 			<h2 class="inline-block transform translate-y-50 translate-x-10 text-8xl text-white">Transforma el <br>Futuro del Reciclaje</h2>
@@ -119,6 +118,45 @@ import BarraNav from "../components/BarraNav.astro";
 				</div>
 				
 			</div>
+
+			<link
+				href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css"
+				rel="stylesheet"
+			/>
+			<script type="module">
+				import { createChat } from "https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js";
+			
+				createChat({
+					webhookUrl: "http://localhost:5678/webhook/3b7ec275-b4bf-475c-a8d4-a4dda39f363e/chat",
+					webhookConfig: {
+						method: 'POST',
+						headers: {}
+					},
+					target: '#n8n-chat',
+					mode: 'window',
+					chatInputKey: 'chatInput',
+					chatSessionKey: 'sessionId',
+					metadata: {},
+					showWelcomeScreen: false,
+					defaultLanguage: 'es',
+					initialMessages: [],
+					i18n: {
+						es: {
+							title: 'Hola👋',
+							subtitle: 'Bienvenido a Basurin♻',
+							footer: '',
+							getStarted: 'Nueva conversación',
+							inputPlaceholder: 'mensaje...',
+							submitButton: 'Enviar',
+							loading: 'Cargando...',
+							retry: 'Reintentar',
+							retryButton: 'Reintentar',
+							noResponse: 'No hay respuesta',
+							noResponseSubtitle: 'No hay respuesta',
+						},
+					},
+				});
+			</script>
 
 		</article>
 		  
