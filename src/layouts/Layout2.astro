@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-	<link rel="stylesheet" href="/src/styles/global.css" />
+    <link rel="stylesheet" href="/src/styles/global.css" />
     <meta name="generator" content={Astro.generator} />
     <title>Iniciar Sesión</title>
 </head>
@@ -16,23 +16,49 @@
             
         <img src="public/Basurin-Photoroom.png" class="h-45 w-45 transform translate-x-32 translate-y-8 drop-shadow-2xl" alt="Basurín"/>
 
-        <div class="inline-block transform -translate-y-5">
-            <p class="text-gray-400 transform translate-y-16 translate-x-8">Correo</p>
-            <input type="email" id="email" name="email" required placeholder="     ejemplo@correo.com" class="h-10 w-90 bg-gray-300 rounded-2xl transform translate-y-17 translate-x-8 shadow-2xl">
-            <p class="text-gray-400 transform translate-y-19 translate-x-8">Contraseña</p>
-            <input type="password" id="password" name="password" required placeholder="     Contraseña" class="h-10 w-90 bg-gray-300 rounded-2xl transform translate-y-19 translate-x-8 shadow-2xl">
+        <form action="/Funcionamiento" method="get">
+            <div class="inline-block transform -translate-y-5">
+                <p class="text-gray-400 transform translate-y-16 translate-x-8">Correo</p>
+                <input type="email" id="email" name="email" required placeholder="     ejemplo@correo.com" class="h-10 w-90 bg-gray-300 rounded-2xl transform translate-y-17 translate-x-8 shadow-2xl">
+                <p class="text-gray-400 transform translate-y-19 translate-x-8">Contraseña</p>
+                <input type="password" id="password" name="password" required placeholder="     Contraseña" class="h-10 w-90 bg-gray-300 rounded-2xl transform translate-y-19 translate-x-8 shadow-2xl">
 
-        </div>
+            </div>
 
-        <div class="inline-block transform translate-y-19 translate-x-13">
+            <div class="inline-block transform translate-y-19 translate-x-13">
 
-            <input type="button" value="Iniciar Sesión" class="bg-cyan-700 h-10 w-40 rounded-2xl shadow-2xl text-white hover:bg-cyan-800 transition duration-300 cursor-pointer">
-            <input type="button" value="Crear Cuenta" class="bg-green-700 h-10 w-40 rounded-2xl shadow-2xl text-white hover:bg-green-800 transition duration-300 cursor-pointer">
+                <input type="submit" value="Iniciar Sesión" class="bg-cyan-700 h-10 w-40 rounded-2xl shadow-2xl text-white hover:bg-cyan-800 transition duration-300 cursor-pointer">
+                <button type="button" onclick="window.location.href='/Basurin-proyect/src/layouts/Registrarse.astro'" class="bg-green-700 h-10 w-40 rounded-2xl shadow-2xl text-white hover:bg-green-800 transition duration-300 cursor-pointer">
+                    Crear Cuenta
+                </button>
 
-        </div>
+            </div>
+        </form>
+
+        <script type="module">
+            // Puedes mantener este script para futuras validaciones
+            async function handleLogin(){
+                const username = document.getElementById('email').value;
+                const password = document.getElementById('password').value;
+
+                const response = await fetch('http://localhost:3000/api/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ username, password })
+                });
+
+                const result = await response.json();
+                if(result.success){
+                    window.location.href = '/dashboard'; // Redirección alternativa
+                } else {
+                    alert('Login failed: ' + result.message);
+                }
+            }
+        </script>
 
     </div>
-
     
 </body>
 </html>

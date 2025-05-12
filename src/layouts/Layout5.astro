@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+	<link rel="stylesheet" href="/src/styles/global.css" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Estado del Contenedor</title>
+</head>
+<body class="min-h-screen bg-[linear-gradient(to_right,_#023D54,_#11A86B,_#B4BA5A)] flex flex-col items-center justify-center p-4">
+    <div class="max-w-md w-full bg-white rounded-lg shadow-lg p-8">
+        <!-- Botón de regreso -->
+        <button onclick="window.history.back()" class="mb-4 flex items-center text-gray-600 hover:text-gray-800 transition">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd" />
+            </svg>
+            Volver
+        </button>
+        
+        <!-- Foto del edificio -->
+        <div class="mb-6 rounded-lg overflow-hidden shadow-md">
+            <img id="edificioFoto" src="https://via.placeholder.com/600x300?text=Edificio+A" alt="Foto del edificio" class="w-full h-48 object-cover">
+        </div>
+        
+        <!-- Información del edificio -->
+        <h2 id="nombreEdificio" class="text-2xl font-bold text-gray-800 mb-2 text-center">Edificio A</h2>
+        <p class="text-gray-600 mb-6 text-center">Estado del contenedor</p>
+        
+        <!-- Barra de progreso -->
+        <div class="mb-8">
+            <div class="flex justify-between mb-2">
+                <span class="text-sm font-medium text-gray-700">Nivel de llenado</span>
+                <span id="porcentaje" class="text-sm font-medium text-gray-700">0%</span>
+            </div>
+            <div class="w-full bg-gray-200 rounded-full h-4">
+                <div id="barraProgreso" class="bg-[#11A86B] h-4 rounded-full transition-all duration-3000 ease-out" style="width: 0%"></div>
+            </div>
+        </div>
+        
+        <!-- Estado actual -->
+        <div class="bg-gray-100 p-4 rounded-lg">
+            <h3 class="font-semibold text-gray-800 mb-2">Estado actual:</h3>
+            <p id="estadoContenedor" class="text-gray-600">El contenedor está vacío</p>
+        </div>
+    </div>
+</body>
+</html>
